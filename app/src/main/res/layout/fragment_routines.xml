@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.RoutinesFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/routinesFragmentAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow"
+            android:gravity="center"
+            app:menu="@menu/smart_home_routines_menu">
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tv_ActiveRoutinesHd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F1F3F4"
+        android:paddingLeft="20dp"
+        android:paddingVertical="20dp"
+        android:layout_below="@+id/routinesFragmentAppBar"
+        android:text="Active"
+        android:textSize="20sp"
+        tools:visibility="gone"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRoutinesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_ActiveRoutinesHd"
+        tools:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/noRoutinesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/routinesFragmentAppBar"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/ic_routines"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_restore_routines" />
+
+        <TextView
+            android:id="@+id/tv_noRoutines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ic_routines"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="No Routines!"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_noRoutines"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Click the '+' button below to get started"
+            android:textSize="22sp" />
+
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/idFABAddNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_plus"
+        app:backgroundTint="@android:color/holo_blue_dark"
+        app:tint="@color/white" />
+
+</RelativeLayout>
